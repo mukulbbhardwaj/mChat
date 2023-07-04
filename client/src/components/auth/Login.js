@@ -105,7 +105,7 @@ function Login() {
       </FormControl>
 
       <Button
-        colorScheme="blue"
+        colorScheme="teal"
         onClick={submitHandler}
         width={"100%"}
         style={{ marginTop: 18 }}
@@ -115,7 +115,7 @@ function Login() {
       </Button>
       <Button
         variant={"solid"}
-        colorScheme="red"
+        colorScheme="whatsapp"
         width={"100%"}
         onClick={() => {
           setEmail("guest@example.com");

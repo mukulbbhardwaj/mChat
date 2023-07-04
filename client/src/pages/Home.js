@@ -8,12 +8,15 @@ import {
   TabList,
   TabPanel,
   TabPanels,
+  Image,
 } from "@chakra-ui/react";
 
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
 import { useHistory } from "react-router";
 import { useEffect } from "react";
+import logo from "../asset/mChat.png";
+
 const Home = () => {
   const history = useHistory();
   useEffect(() => {
@@ -28,24 +31,20 @@ const Home = () => {
     <Container maxW="xl" centerContent>
       <Box
         display="flex"
-        p="3"
-        bg="white"
         width="100%"
-        m="40px 0 15px 0"
         borderRadius="lg"
-        borderWidth="1px"
         justifyContent={"center"}
       >
-        <Text fontSize="4xl">ChatApp</Text>
+       
+        <Image src={logo} height={"100px"} width={"100px"}></Image>
       </Box>
       <Box
-        bg={"white"}
+        bg={"rgb(17,27,33)"}
         w={"100%"}
         borderRadius={"lg"}
-        borderWidth={"1px"}
         padding={4}
       >
-        <Tabs isFitted variant="soft-rounded">
+        <Tabs isFitted variant="soft-rounded" colorScheme="green">
           <TabList mb="1em">
             <Tab>Login</Tab>
             <Tab>Register</Tab>

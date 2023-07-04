@@ -123,31 +123,35 @@ const SideDrawer = () => {
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        bg={"white"}
+        bg={"#1f2c33"}
         width={"100%"}
-        borderWidth={"2px"}
+        borderBottomWidth={"1px"}
         padding={"5px 10px 5px 10px"}
+        borderColor={"gray"}
       >
         <Tooltip label="Search Users" hasArrow placement="bottom-end">
           <Button variant={"ghost"} ref={btnRef} onClick={onOpen}>
-            <Search2Icon padding={"0px 1px 0px 1px"} />
+            <Search2Icon color={"white"} padding={"0px 1px 0px 1px"} />
             {/* <Text display={{ base: "none", md: "flex" }}>Search User</Text> */}
           </Button>
         </Tooltip>
         <Text fontSize={"2xl"} fontWeight={600}>
-          BaatChat
+          mChat
         </Text>
         <div>
           <Menu>
             <MenuButton p={"2px"}>
               <BellIcon fontSize={"2xl"} margin={1} />
-              <MenuList pl={2}>
+              <MenuList pl={2} bg={"#1f2c33"}>
                 {!notification.length && "No New Messages"}
                 {notification.map((notif) => (
-                  <MenuItem key={notif._id} onClick={() => {
-                    setSelectedChat(notif.chat);
-                    setNotification(notification.filter((n) => n !== notif))
-                  }}>
+                  <MenuItem
+                    key={notif._id}
+                    onClick={() => {
+                      setSelectedChat(notif.chat);
+                      setNotification(notification.filter((n) => n !== notif));
+                    }}
+                  >
                     {notif.chat.isGroupChat
                       ? `New Message in ${notif.chat.chanName}`
                       : `New Message from ${getSender(user, notif.chat.users)}`}
@@ -156,21 +160,30 @@ const SideDrawer = () => {
               </MenuList>
             </MenuButton>
           </Menu>
-          <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+          <Menu >
+            <MenuButton
+              bg={"#1f2c33"}
+              as={Button}
+              // rightIcon={<ChevronDownIcon />}
+            >
               <Avatar
                 size={"sm"}
                 cursor={"pointer"}
                 name={user.name}
                 src={user.pfp}
+               
               />
             </MenuButton>
-            <MenuList>
+            <MenuList color={"black"} bg={"#1f2c33"}>
               <ProfileModal user={user}>
-                <MenuItem>My Profile</MenuItem>
+                <MenuItem bg={"#1f2c33"} color={"white"}>
+                  My Profile
+                </MenuItem>
               </ProfileModal>
               <MenuDivider />
-              <MenuItem onClick={logOutHandler}>LogOut</MenuItem>
+              <MenuItem bg={"#1f2c33"} color={"white"} onClick={logOutHandler}>
+                LogOut
+              </MenuItem>
             </MenuList>
           </Menu>
         </div>

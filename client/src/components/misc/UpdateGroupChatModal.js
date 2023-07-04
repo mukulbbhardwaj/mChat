@@ -163,11 +163,28 @@ const UpdateGroupChatModal = (fetchMessages) => {
       );
 
       delUser._id === user._id ? setSelectedChat() : setSelectedChat(data);
-
+      
+      
+       toast({
+         status:"success",
+         title: "User Removed",
+         duration: 2000,
+         isClosable: true,
+       });
+      setLoading(false);
       setFetchAgain(!fetchAgain);
       fetchMessages();
+
+    } catch (error) {
+      // toast({
+      //   status: "warning",
+      //   title: "Error",
+      //   duration: 2000,
+      //   isClosable: true,
+      // });
       setLoading(false);
-    } catch (error) {}
+    }
+    setGroupChatName("");
   };
 
   return (

@@ -44,10 +44,11 @@ const MyChat = ({ fetchAgain }) => {
       flexDir={"column"}
       alignItems={"center"}
       p={3}
-      bg={"white"}
+      bg={"rgb(17,27,33)"}
       w={{ base: "100%", md: "30%" }}
       borderRadius={"lg"}
-      borderWidth={"1px"}
+      borderRightWidth={"1px"}
+      borderColor={"gray"}
     >
       <Box
         pb={3}
@@ -81,7 +82,7 @@ const MyChat = ({ fetchAgain }) => {
       >
         {chats ? (
           <Stack overflowY={"scroll"}>
-            {chats.map((chat) => (
+            {chats.map((chat ) => (
               <Box
                 onClick={() => setSelectedChat(chat)}
                 cursor={"pointer"}
@@ -91,7 +92,7 @@ const MyChat = ({ fetchAgain }) => {
                 py={2}
                 borderRadius={"lg"}
                 key={chat._id}
-              >
+              >{console.log(chat)}
                 <Text>
                   {!chat.isGroupChat
                     ? getSender(loggedUser, chat.users)

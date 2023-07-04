@@ -147,7 +147,7 @@ function Register() {
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           ></Input>
-          <InputRightElement>
+          <InputRightElement marginRight={"5px"}>
             <Button
               colorScheme="teal"
               size="xs"
@@ -167,12 +167,13 @@ function Register() {
             placeholder="password"
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          <InputRightElement>
+          <InputRightElement marginRight={"5px"}>
             <Button
               colorScheme="teal"
               size="xs"
               fontSize={12}
               onClick={handleClick}
+             
             >
               {show ? "Hide" : "Show"}
             </Button>
@@ -189,11 +190,11 @@ function Register() {
         />
       </FormControl>
       <Button
-        colorScheme="blue"
+        colorScheme="teal"
         onClick={submitHandler}
         width={"100%"}
         style={{ marginTop: 18 }}
-        isLoading= {loading}
+        isLoading={loading}
       >
         SignUp
       </Button>

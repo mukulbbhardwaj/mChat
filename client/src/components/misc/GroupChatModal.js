@@ -117,15 +117,27 @@ const GroupChatModal = ({ children }) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader textAlign={"center"} fontSize={"32px"}>
+          <ModalHeader
+            bg={"#1f2c33"}
+            color={"white"}
+            textAlign={"center"}
+            fontSize={"32px"}
+          >
             Create Group Chat
           </ModalHeader>
           <ModalCloseButton />
-          <ModalBody display={"flex"} flexDir={"column"} alignItems={"center"}>
+          <ModalBody
+            bg={"#1f2c33"}
+            color={"white"}
+            display={"flex"}
+            flexDir={"column"}
+            alignItems={"center"}
+          >
             <FormControl>
               <Input
                 placeholder="Group Chat Name"
                 mb={3}
+                colorScheme="whatsapp"
                 onChange={(e) => setGroupChatName(e.target.value)}
               />
             </FormControl>
@@ -162,11 +174,11 @@ const GroupChatModal = ({ children }) => {
             )}
           </ModalBody>
 
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
+          <ModalFooter bg={"#1f2c33"} color={"white"}>
+            <Button colorScheme="whatsapp" mr={3} onClick={handleSubmit}>
               Create Group
             </Button>
-            <Button variant="ghost" onClick={onClose}>
+            <Button variant="ghost" colorScheme="whatsapp" onClick={onClose}>
               Cancel
             </Button>
           </ModalFooter>

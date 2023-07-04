@@ -22,8 +22,15 @@ const ENDPOINT = "http://localhost:8000";
 var socket, selectedChatCompare;
 
 const SingleChat = () => {
-  const { user, selectedChat, setSelectedChat, notification, setNotification,setFetchAgain,fetchAgain } =
-    ChatState();
+  const {
+    user,
+    selectedChat,
+    setSelectedChat,
+    notification,
+    setNotification,
+    setFetchAgain,
+    fetchAgain,
+  } = ChatState();
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newMessage, setNewMessage] = useState([]);
@@ -209,8 +216,7 @@ const SingleChat = () => {
               {isTyping ? <div>...loading</div> : <></>}
               <Input
                 placeholder="type ypur message ..."
-                variant={"filled"}
-                bg={"#E0E0E0"}
+                
                 onChange={typingHandler}
                 value={newMessage}
               ></Input>

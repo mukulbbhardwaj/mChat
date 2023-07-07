@@ -24,6 +24,8 @@ function Login() {
     setShow(!show);
   };
 
+  const BASE_URL = "https://mchat-backend.onrender.com/";
+
   const submitHandler = async () => {
     setLoading(true);
     if (!email || !password) {
@@ -45,7 +47,7 @@ function Login() {
         },
       };
       const { data } = await axios.post(
-        "/api/user/login",
+        `${BASE_URL}api/user/login`,
         { email, password},
         config
       );

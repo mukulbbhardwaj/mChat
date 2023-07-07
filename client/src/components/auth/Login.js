@@ -46,7 +46,7 @@ function Login() {
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.post(
+      const { data } = await axios.get(
         `api/user/login`,
         { email, password},
         config

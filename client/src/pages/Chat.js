@@ -24,6 +24,7 @@ const Chat = () => {
           <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
         )}
       </Box>
+      
     </div>
   );
 };

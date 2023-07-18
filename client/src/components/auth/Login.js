@@ -13,7 +13,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 function Login() {
-  const [name, setName] = useState();
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [show, setShow] = useState(false);
@@ -46,8 +46,8 @@ function Login() {
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.get(
-        `api/user/login`,
+      const { data } = await axios.post(
+        `/api/user/login`,
         { email, password},
         config
       );
